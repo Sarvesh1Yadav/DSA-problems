@@ -1,0 +1,20 @@
+#include <stdio.h>
+int sorted(int arr[],int);
+
+int main()
+{  int n,i;
+    printf("enter the size of array:-");
+    scanf("%d",&n);
+    int arr[n];
+    printf("enter the array elements:-");
+    for(i=0;i<n;i++)
+    scanf("%d",&arr[i]);
+  printf("%d",sorted(arr,n));
+    return 0;
+}
+int sorted(int arr[],int n){
+    if(n==1)
+    return 1;
+    int restarray=sorted(arr+1,n-1);
+    return (arr[0]<arr[1]&&restarray);
+}
