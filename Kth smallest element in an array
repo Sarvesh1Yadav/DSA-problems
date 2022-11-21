@@ -1,0 +1,25 @@
+#include<stdio.h>
+int main()
+{ int i,k,min,j;
+	int arr[100]={8,23,9,6,4,76,5,20};
+	for(i=0;i<7;i++)
+	{  for(j=i+1;j<8;j++)
+		  {
+		  	if(arr[j]<arr[i])
+            	{ min=arr[j];
+	              arr[j]=arr[i];
+              	arr[i]=min;
+             	}
+	      }
+	      }
+	printf("sorting in increasing order:-");
+	for(i=0;i<8;i++)
+     printf(" %d",arr[i]);
+	printf("\nenter kth smallest no.:-");
+	      scanf("%d",&k);
+	for(i=0;i<8;i++)
+	    {  if((i+1)==k)
+	printf(" \n%dth smallest no.:- %d",k,arr[i]);
+	    	}
+	    	}
+	      
