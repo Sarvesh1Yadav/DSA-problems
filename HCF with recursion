@@ -1,0 +1,16 @@
+#include <stdio.h>
+int hcf(int ,int);
+int main()
+{  int n,m;
+	printf("enter two no:-\n");
+scanf("%d%d",&n,&m);
+	printf("Hcf of these no. is %d",hcf(n,m));
+	}
+	int hcf(int n,int m)
+	{  //if(n>m)
+		//hcf(m,n);
+		if(m%n==0)
+		return n;
+		else
+		return hcf(m%n,n);
+		}
