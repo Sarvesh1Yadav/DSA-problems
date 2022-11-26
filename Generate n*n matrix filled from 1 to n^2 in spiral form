@@ -1,0 +1,48 @@
+#include <iostream>
+using namespace std;
+//void func(int arr[][n],int m,int n){
+int main(){
+    int n,i,j;
+    cout<<"enter order of matrix\n";
+    cin>>n;
+    int arr[n][n];
+    int left=0,right=n-1,top=0,bottom=n-1,direction=0,value=1;
+    while(left<=right&&top<=bottom){
+    if(direction==0){
+        for(int col=0;col<=right;col++){
+            arr[top][col]=value++;
+       
+        }
+        top++;
+    }
+   else if(direction==1){
+       for(int row=top;row<=bottom;row++){
+           arr[row][right]=value++;
+       
+       }
+       right--;
+   }
+   else if(direction==2){
+       for(int col=right;col>=left;col--){
+           arr[bottom][col]=value++;
+       
+       }
+       bottom--;
+   }
+   else{
+   for(int row=bottom;row>top;row--){
+       arr[row][left]=value++;
+   }
+   left++;
+    }
+    direction=(direction+1)%4;
+}
+
+
+for(i=0;i<n;i++){
+    for(j=0;j<n;j++){
+    cout<<arr[i][j]<<"  ";
+    }
+    cout<<endl;
+}
+}
