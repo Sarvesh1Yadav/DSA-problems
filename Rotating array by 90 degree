@@ -1,0 +1,42 @@
+#include<iostream>
+using namespace std;
+int main()
+{ int i,j,n,m,arr[50][50],temp;
+cout<<"enter no. of rows of square matrix :-\n";
+cin>>n;
+cout<<"enter array\n";
+for(i=1;i<=n;i++){
+	for(j=1;j<=n;j++){
+		cin>>arr[i][j];
+	}
+  }
+  for(i=1;i<=n;i++){
+	for(j=1;j<=i;j++){
+		if(i==j)
+		arr[i][j]=arr[i][j];
+		else{
+			temp=arr[i][j];
+			arr[i][j]=arr[j][i];
+			arr[j][i]=temp;
+		}
+	}
+}
+
+ /* for(i=1;i<=n;i++){
+	for(j=1;j<=n;j++){
+		if(j==2)
+		arr[i][j]=arr[i][j];
+	 if(j==1)
+		arr[i][j]=arr[i][j+2];
+	
+	}
+	}
+	cout<<"array after 90 degree rotation is\n";*/
+for(i=1;i<=n;i++){
+	for(j=n;j>=1;j--){
+	cout<<arr[i][j]<<" ";
+}
+cout<<"\n";
+}
+		
+}
