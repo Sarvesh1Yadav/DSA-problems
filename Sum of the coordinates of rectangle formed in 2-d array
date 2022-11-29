@@ -1,0 +1,27 @@
+#include <iostream>
+using namespace std;
+int main() {
+    int i,j,l1,r1,l2,r2,arr[50][50],sum=0,m,n;
+    cout<<"row and  column:-\n";
+    cin>>m>>n;
+     cout<<"enter coordinates:-\n";
+    cin>>l1>>r1>>l2>>r2;
+    cout<<"enter array:-\n";
+    for(i=0;i<m;i++){
+        for(j=0;j<n;j++){
+        cin>>arr[i][j];
+    }
+}
+for(i=0;i<m;i++){
+        for(j=1;j<n;j++){
+        arr[i][j]=arr[i][j]+arr[i][j-1];
+    }
+}
+for(i=l1;i<=l2;i++){
+    if(r1!=0)
+        sum+=arr[i][r2]-arr[i][r1-1];
+        else
+        sum+=arr[i][r2];
+    }
+    cout<<sum;
+}
