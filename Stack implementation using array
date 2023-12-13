@@ -1,0 +1,41 @@
+#include<stdio.h>
+
+struct Stack{
+  int arr[10],top,size;
+};
+
+void push(struct Stack *stack, int num){
+  if(stack->top==stack->size-1){
+    printf("\nStack overflow!");
+    return;
+  }
+  stack->arr[++stack->top] = num;
+  printf("%d pushed into stack\n",num);
+}
+
+int pop(struct Stack *stack){
+  if(stack->top==-1){
+    printf("\nStack underflow!");
+    return -1;
+  }
+  else return stack->arr[stack->top--];
+}
+
+void peek(struct Stack *stack){
+  if(stack->top==-1){
+    printf("\nStack is empty!");
+    return;
+  }
+  else printf("%d ",stack->arr[stack->top]);
+}
+
+int main(){
+  struct Stack stack;
+  int i=1;
+  stack.top=-1;
+  stack.size=10;
+  for(;i<=15;i++ )push(&stack, i);
+  printf("\n");
+  for(i=1;i<=15;i++) printf("%d ", pop(&stack));
+  return 0;
+}
